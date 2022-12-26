@@ -27,11 +27,6 @@ getQuiz()
   }
 
 
-const quiz = ()=>{
-  if(questions){
-
-}
-}
 
 
 
