@@ -10,31 +10,28 @@ const Home = () => {
 
 
   const getQuiz = () => {
-    fetch("https://opentdb.com/api.php?amount=1&category=18&type=multiple")
+    fetch("https://opentdb.com/api.php?amount=5&category=18&type=multiple")
       .then(res => res.json())
-      .then(data => setQuestions([data]))
+      .then(data => {
+        const result = data.results
+        result.map(item=>{
+          const {incorrect_answers, question, correct_answer} = item
+          console.log(question)
+        })
+      })
   }
   useEffect(() => {
     getQuiz()
   }, [])
-  let result;
-  function startQuiz() {
-    if (questions.length !== 0) {
-      result = questions[0].results[0]
 
-    // setIsLoaded(true)
-      console.log(result)
-    const { question } = result
-    const quizElem = result.map(ques => {
-      return <div>question</div>
-      console.log(question)
-    })
+  function startQuiz() {
+   getQuiz()
     }
 
     // console.log("The final log" + questions)
 
 
-  }
+  
 
 
 
@@ -54,7 +51,7 @@ const Home = () => {
             <button typeof="button" onClick={startQuiz}>Start quiz</button>
           </div>
         </div>
-      ) : '' }
+      ) : ''}
 
     </div>
   )
