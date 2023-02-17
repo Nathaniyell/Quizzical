@@ -11,10 +11,7 @@ const Home = () => {
   const getQuiz = () => {
     fetch("https://opentdb.com/api.php?amount=5&category=18&type=multiple")
       .then(res => res.json())
-      .then(data => {
-        const result = data.results;
-        setQuizzes(result);
-      })
+      .then(data => {setQuizzes(data.results)})
       .catch(error => {
         console.log("Error fetching quizzes:", error);
         setQuizzes([]);

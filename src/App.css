@@ -7,9 +7,8 @@ main{
   font-family: 'Karla', sans-serif;
   height: 100vh;
   width: 100%;
-  padding: 15px;
   display: flex;
-/*   align-items: center; */
+  align-items: center;
   justify-content: center;
-  background: green;
+
 }
